@@ -1,0 +1,20 @@
+{
+  "name": "scene-blueprint-tools",
+  "interface": {
+    "displayName": "Scene Blueprint Tools"
+  },
+  "plugins": [
+    {
+      "name": "scene-specifications-builder-blender-mcp",
+      "source": {
+        "source": "local",
+        "path": "./plugins/scene-specifications-builder-blender-mcp"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

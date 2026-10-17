@@ -1,0 +1,14 @@
+.DS_Store
+__MACOSX/
+__pycache__/
+.pytest_cache/
+.venv/
+*.py[cod]
+.coverage
+htmlcov/
+.env
+.env.*
+dist/*.zip
+dist/*.sha256
+reports/generated-*.md
+reports/generated-*.txt

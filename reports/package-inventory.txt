@@ -1,0 +1,12 @@
+.codex-plugin/plugin.json
+README.md
+assets/scene-blueprint-builder.png
+plugin.json
+skills/scene-specifications-builder/SKILL.md
+skills/scene-specifications-builder/agents/openai.yaml
+skills/scene-specifications-builder/references/blueprint_quality.md
+skills/scene-specifications-builder/references/conversation_starters.md
+skills/scene-specifications-builder/references/example_scene_spec.json
+skills/scene-specifications-builder/references/output_contract.md
+skills/scene-specifications-builder/references/scene_spec_v1.md
+skills/scene-specifications-builder/references/scene_spec_v1.schema.json

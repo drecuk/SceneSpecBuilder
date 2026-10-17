@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "scene_id": "example_room",
+  "scene_name": "Example room",
+  "scene_description": "Minimal validation fixture for the scene specification contract.",
+  "assumptions": [
+    "The room is represented by one floor plane and one table block."
+  ],
+  "coordinate_system": {
+    "units": "METERS",
+    "up_axis": "Z",
+    "horizontal_axes": ["X", "Y"],
+    "origin_description": "Centre of the room floor"
+  },
+  "world_bounds": {
+    "width_x": 8.0,
+    "depth_y": 6.0,
+    "height_z": 4.0
+  },
+  "objects": [
+    {
+      "id": "OBJ_001",
+      "name": "Floor",
+      "type": "plane",
+      "position": [0.0, 0.0, 0.01],
+      "rotation_deg": [0.0, 0.0, 0.0],
+      "dimensions": [8.0, 6.0, 0.02],
+      "material_id": "MAT_001",
+      "priority": "P1",
+      "instance_of": null,
+      "parameters": {}
+    },
+    {
+      "id": "OBJ_002",
+      "name": "Table",
+      "type": "box",
+      "position": [0.0, 0.0, 0.45],
+      "rotation_deg": [0.0, 0.0, 0.0],
+      "dimensions": [1.8, 0.8, 0.9],
+      "material_id": "MAT_002",
+      "priority": "P2",
+      "instance_of": null,
+      "parameters": {}
+    }
+  ],
+  "materials": [
+    {
+      "id": "MAT_001",
+      "name": "Concrete",
+      "base_color": "#777B80",
+      "roughness": 0.82,
+      "metallic": 0.0,
+      "texture_notes": "Subtle aggregate"
+    },
+    {
+      "id": "MAT_002",
+      "name": "Warm wood",
+      "base_color": "#8A5938",
+      "roughness": 0.55,
+      "metallic": 0.0
+    }
+  ],
+  "lights": [
+    {
+      "id": "LIGHT_001",
+      "name": "Key light",
+      "type": "AREA",
+      "position": [2.0, -2.0, 3.0],
+      "target": [0.0, 0.0, 0.7],
+      "color": "#FFE2B8",
+      "energy": 800.0,
+      "size": 2.0
+    }
+  ],
+  "camera": {
+    "position": [5.8, -6.2, 4.0],
+    "target": [0.0, 0.0, 0.8],
+    "lens_mm": 35.0,
+    "sensor_width_mm": 36.0,
+    "resolution_x": 1920,
+    "resolution_y": 1080,
+    "clip_start": 0.1,
+    "clip_end": 100.0
+  },
+  "environment": {
+    "world_color": "#202938",
+    "world_strength": 0.35,
+    "transparent_film": false
+  },
+  "build_sequence": [
+    "OBJ_001",
+    "OBJ_002"
+  ]
+}

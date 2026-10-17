@@ -1,0 +1,153 @@
+# Validation report
+
+- Status: **PASS**
+- Version: `0.3.0`
+- Validated target: `plugins/scene-specifications-builder-blender-mcp`
+- MCP server count: `0`
+- MCP tool count: `0`
+
+## Errors
+
+- None
+
+## Warnings
+
+- None
+
+## Passed checks
+
+- Package root exists
+- Package is not empty
+- No symlink: .codex-plugin/plugin.json
+- No prohibited path: .codex-plugin/plugin.json
+- No app binding file: .codex-plugin/plugin.json
+- No symlink: README.md
+- No prohibited path: README.md
+- No app binding file: README.md
+- No symlink: assets/scene-blueprint-builder.png
+- No prohibited path: assets/scene-blueprint-builder.png
+- No app binding file: assets/scene-blueprint-builder.png
+- No symlink: plugin.json
+- No prohibited path: plugin.json
+- No app binding file: plugin.json
+- No symlink: skills/scene-specifications-builder/SKILL.md
+- No prohibited path: skills/scene-specifications-builder/SKILL.md
+- No app binding file: skills/scene-specifications-builder/SKILL.md
+- No symlink: skills/scene-specifications-builder/agents/openai.yaml
+- No prohibited path: skills/scene-specifications-builder/agents/openai.yaml
+- No app binding file: skills/scene-specifications-builder/agents/openai.yaml
+- No symlink: skills/scene-specifications-builder/references/blueprint_quality.md
+- No prohibited path: skills/scene-specifications-builder/references/blueprint_quality.md
+- No app binding file: skills/scene-specifications-builder/references/blueprint_quality.md
+- No symlink: skills/scene-specifications-builder/references/conversation_starters.md
+- No prohibited path: skills/scene-specifications-builder/references/conversation_starters.md
+- No app binding file: skills/scene-specifications-builder/references/conversation_starters.md
+- No symlink: skills/scene-specifications-builder/references/example_scene_spec.json
+- No prohibited path: skills/scene-specifications-builder/references/example_scene_spec.json
+- No app binding file: skills/scene-specifications-builder/references/example_scene_spec.json
+- No symlink: skills/scene-specifications-builder/references/output_contract.md
+- No prohibited path: skills/scene-specifications-builder/references/output_contract.md
+- No app binding file: skills/scene-specifications-builder/references/output_contract.md
+- No symlink: skills/scene-specifications-builder/references/scene_spec_v1.md
+- No prohibited path: skills/scene-specifications-builder/references/scene_spec_v1.md
+- No app binding file: skills/scene-specifications-builder/references/scene_spec_v1.md
+- No symlink: skills/scene-specifications-builder/references/scene_spec_v1.schema.json
+- No prohibited path: skills/scene-specifications-builder/references/scene_spec_v1.schema.json
+- No app binding file: skills/scene-specifications-builder/references/scene_spec_v1.schema.json
+- Required file exists: plugin.json
+- Required file exists: .codex-plugin/plugin.json
+- Required file exists: skills/scene-specifications-builder/SKILL.md
+- Required file exists: skills/scene-specifications-builder/agents/openai.yaml
+- Required file exists: skills/scene-specifications-builder/references/scene_spec_v1.schema.json
+- Required file exists: skills/scene-specifications-builder/references/example_scene_spec.json
+- Portable schema URL is exact
+- Package name is a valid portable identifier
+- Version is strict SemVer
+- Package directory matches manifest name
+- Compatibility name matches
+- Compatibility version matches
+- Compatibility manifest omits portable schema
+- Compatibility skill path is portable
+- OpenAI extension is an object
+- Portable manifest has no app binding
+- Compatibility manifest has no app binding
+- Compatibility extension has no app binding
+- displayName is nonblank and at most 30 characters
+- Compatibility displayName matches
+- shortDescription is nonblank and at most 30 characters
+- Compatibility shortDescription matches
+- longDescription is nonblank and at most 4000 characters
+- Compatibility longDescription matches
+- developerName is nonblank and at most 80 characters
+- Compatibility developerName matches
+- Category is nonblank
+- Capabilities is an array
+- There are one to three starter prompts
+- Starter prompt 1 is single-line, nonblank, at most 128 characters, and has no app mention
+- Starter prompt 2 is single-line, nonblank, at most 128 characters, and has no app mention
+- Starter prompt 3 is single-line, nonblank, at most 128 characters, and has no app mention
+- Starter prompts are unique after whitespace normalization
+- Compatibility starter prompts match
+- logo resolves to a contained file
+- Compatibility logo matches
+- logo is square
+- logo dimensions are within submission limits
+- logo is at most 5 MiB
+- composerIcon resolves to a contained file
+- Compatibility composerIcon matches
+- composerIcon is square
+- composerIcon dimensions are within submission limits
+- composerIcon is at most 5 MiB
+- Skill is no larger than 1 MiB
+- Skill starts with YAML frontmatter
+- Skill frontmatter name matches directory
+- Skill frontmatter description is nonblank
+- Skill reference exists: references/scene_spec_v1.md
+- Skill reference exists: references/scene_spec_v1.schema.json
+- Skill reference exists: references/blueprint_quality.md
+- Skill reference exists: references/output_contract.md
+- Skill reference exists: references/conversation_starters.md
+- Agent display name matches plugin
+- Agent default prompt is a nonblank string
+- Implicit invocation policy is Boolean
+- Agent products use supported values
+- Example scene JSON validates against the bundled JSON Schema
+- plugin.json validates against the live Agent Plugins schema
+- No machine-specific user path: .codex-plugin/plugin.json
+- No machine-specific user path: README.md
+- No machine-specific user path: plugin.json
+- No machine-specific user path: skills/scene-specifications-builder/SKILL.md
+- No machine-specific user path: skills/scene-specifications-builder/agents/openai.yaml
+- No machine-specific user path: skills/scene-specifications-builder/references/blueprint_quality.md
+- No machine-specific user path: skills/scene-specifications-builder/references/conversation_starters.md
+- No machine-specific user path: skills/scene-specifications-builder/references/example_scene_spec.json
+- No machine-specific user path: skills/scene-specifications-builder/references/output_contract.md
+- No machine-specific user path: skills/scene-specifications-builder/references/scene_spec_v1.md
+- No machine-specific user path: skills/scene-specifications-builder/references/scene_spec_v1.schema.json
+- Skills-only package has zero MCP servers
+- Package has no legacy MCP configuration
+- Repository marketplace file exists
+- Marketplace name is nonblank
+- Marketplace display name is present
+- Marketplace declares exactly one plugin
+- Marketplace uses a repository-local source
+- Marketplace source resolves to the package
+- Marketplace plugin name matches manifest
+- Marketplace installation policy is recognized
+- Marketplace authentication policy is present
+- Marketplace category is present
+
+## Inventory
+
+- `.codex-plugin/plugin.json`
+- `README.md`
+- `assets/scene-blueprint-builder.png`
+- `plugin.json`
+- `skills/scene-specifications-builder/SKILL.md`
+- `skills/scene-specifications-builder/agents/openai.yaml`
+- `skills/scene-specifications-builder/references/blueprint_quality.md`
+- `skills/scene-specifications-builder/references/conversation_starters.md`
+- `skills/scene-specifications-builder/references/example_scene_spec.json`
+- `skills/scene-specifications-builder/references/output_contract.md`
+- `skills/scene-specifications-builder/references/scene_spec_v1.md`
+- `skills/scene-specifications-builder/references/scene_spec_v1.schema.json`

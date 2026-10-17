@@ -1,0 +1,46 @@
+{
+  "name": "scene-specifications-builder-blender-mcp",
+  "version": "0.3.0",
+  "description": "Creates a four-panel scene blueprint for visual approval, then exports matching Blender-ready JSON.",
+  "author": {
+    "name": "Eugene Ch’ng",
+    "url": "https://github.com/drecuk"
+  },
+  "homepage": "https://github.com/drecuk/SceneSpecBuilder",
+  "repository": "https://github.com/drecuk/SceneSpecBuilder",
+  "keywords": [
+    "blender",
+    "blueprint",
+    "scene-design",
+    "world-building",
+    "json"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Scene Blueprint Builder",
+    "shortDescription": "Visual plan to Blender JSON",
+    "longDescription": "Turns a textual story, environment, or object description into a coordinated four-panel visual blueprint. It inventories the described scene, proposes measurable spatial relationships, and presents the blueprint for explicit human approval. Only after approval does it export matching schema-validated scene JSON for a Blender add-on or an existing verified Blender MCP workflow. The illustration documents design intent; the confirmed JSON is authoritative for construction.",
+    "developerName": "Eugene Ch’ng",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive"
+    ],
+    "defaultPrompt": [
+      "Draw a modern jazz café layout with an espresso station, cozy seating, warm lighting, and jazz-club design.",
+      "Draw a Georgian jewel in high-karat or silver-topped gold, with foil-backed closed-set emeralds.",
+      "Draw a Central Asian yurt: round lattice frame, layered sheep-wool felt, built for extreme weather and fierce winds."
+    ],
+    "websiteURL": "https://github.com/drecuk/SceneSpecBuilder",
+    "supportURL": "https://github.com/drecuk/SceneSpecBuilder/issues",
+    "logo": "./assets/scene-blueprint-builder.png",
+    "composerIcon": "./assets/scene-blueprint-builder.png",
+    "brandColor": "#0B3B72"
+  },
+  "extensions": {
+    "com.openai": {
+      "publication": {
+        "release_notes": "Adds a complete visual-approval workflow, exhaustive story-object inventory, a checked JSON handoff contract, three starter prompts, marketplace packaging, and a production icon."
+      }
+    }
+  }
+}

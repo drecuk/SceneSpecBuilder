@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Scene Blueprint Builder scene specification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scene_id",
+    "scene_name",
+    "scene_description",
+    "assumptions",
+    "coordinate_system",
+    "world_bounds",
+    "objects",
+    "materials",
+    "lights",
+    "camera",
+    "environment"
+  ],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "scene_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9_-]{0,63}$"},
+    "scene_name": {"type": "string", "minLength": 1},
+    "scene_description": {"type": "string", "minLength": 1},
+    "assumptions": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "coordinate_system": {"$ref": "#/$defs/coordinateSystem"},
+    "world_bounds": {"$ref": "#/$defs/worldBounds"},
+    "objects": {"type": "array", "maxItems": 5000, "items": {"$ref": "#/$defs/object"}},
+    "materials": {"type": "array", "items": {"$ref": "#/$defs/material"}},
+    "lights": {"type": "array", "items": {"$ref": "#/$defs/light"}},
+    "camera": {"$ref": "#/$defs/camera"},
+    "environment": {"$ref": "#/$defs/environment"},
+    "build_sequence": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "finiteNumber": {"type": "number"},
+    "positiveNumber": {"type": "number", "exclusiveMinimum": 0},
+    "vector3": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/finiteNumber"}
+    },
+    "positiveVector3": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {"$ref": "#/$defs/positiveNumber"}
+    },
+    "color": {"type": "string", "pattern": "^#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$"},
+    "id": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,127}$"},
+    "coordinateSystem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["units", "up_axis", "horizontal_axes", "origin_description"],
+      "properties": {
+        "units": {"const": "METERS"},
+        "up_axis": {"const": "Z"},
+        "horizontal_axes": {"const": ["X", "Y"]},
+        "origin_description": {"type": "string", "minLength": 1}
+      }
+    },
+    "worldBounds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width_x", "depth_y", "height_z"],
+      "properties": {
+        "width_x": {"$ref": "#/$defs/positiveNumber"},
+        "depth_y": {"$ref": "#/$defs/positiveNumber"},
+        "height_z": {"$ref": "#/$defs/positiveNumber"}
+      }
+    },
+    "object": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "type", "position", "rotation_deg", "dimensions", "material_id", "priority"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "name": {"type": "string", "minLength": 1},
+        "type": {"enum": ["box", "cylinder", "sphere", "plane", "cone", "rock", "tree_simple", "terrain_grid", "water_plane", "empty"]},
+        "position": {"$ref": "#/$defs/vector3"},
+        "rotation_deg": {"$ref": "#/$defs/vector3"},
+        "dimensions": {"$ref": "#/$defs/positiveVector3"},
+        "material_id": {"oneOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+        "priority": {"enum": ["P1", "P2", "P3"]},
+        "instance_of": {"oneOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+        "parameters": {"type": "object"}
+      }
+    },
+    "material": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "base_color", "roughness", "metallic"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "name": {"type": "string", "minLength": 1},
+        "base_color": {"$ref": "#/$defs/color"},
+        "roughness": {"type": "number", "minimum": 0, "maximum": 1},
+        "metallic": {"type": "number", "minimum": 0, "maximum": 1},
+        "transmission": {"type": "number", "minimum": 0, "maximum": 1},
+        "emission_color": {"$ref": "#/$defs/color"},
+        "emission_strength": {"type": "number", "minimum": 0},
+        "texture_notes": {"type": "string"}
+      }
+    },
+    "light": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "type", "position", "color", "energy"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "name": {"type": "string", "minLength": 1},
+        "type": {"enum": ["SUN", "POINT", "AREA", "SPOT"]},
+        "position": {"$ref": "#/$defs/vector3"},
+        "rotation_deg": {"$ref": "#/$defs/vector3"},
+        "target": {"oneOf": [{"$ref": "#/$defs/vector3"}, {"type": "null"}]},
+        "color": {"$ref": "#/$defs/color"},
+        "energy": {"type": "number", "minimum": 0},
+        "size": {"$ref": "#/$defs/positiveNumber"}
+      }
+    },
+    "camera": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["position", "target", "resolution_x", "resolution_y"],
+      "properties": {
+        "position": {"$ref": "#/$defs/vector3"},
+        "target": {"$ref": "#/$defs/vector3"},
+        "lens_mm": {"$ref": "#/$defs/positiveNumber"},
+        "sensor_width_mm": {"$ref": "#/$defs/positiveNumber"},
+        "resolution_x": {"type": "integer", "minimum": 16, "maximum": 32768},
+        "resolution_y": {"type": "integer", "minimum": 16, "maximum": 32768},
+        "clip_start": {"$ref": "#/$defs/positiveNumber"},
+        "clip_end": {"$ref": "#/$defs/positiveNumber"}
+      }
+    },
+    "environment": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "world_color": {"$ref": "#/$defs/color"},
+        "world_strength": {"type": "number", "minimum": 0},
+        "transparent_film": {"type": "boolean"}
+      }
+    }
+  }
+}

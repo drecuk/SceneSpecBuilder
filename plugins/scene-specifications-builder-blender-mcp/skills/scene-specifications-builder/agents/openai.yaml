@@ -1,0 +1,10 @@
+interface:
+  display_name: "Scene Blueprint Builder"
+  short_description: "Review a blueprint, then export Blender JSON"
+  default_prompt: "Use $scene-specifications-builder to turn my scene description into a four-panel blueprint for approval, then export matching Blender-ready JSON."
+  brand_color: "#0B3B72"
+policy:
+  allow_implicit_invocation: true
+  products:
+    - CHAT
+    - CODEX
