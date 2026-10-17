@@ -21,4 +21,4 @@ jobs:
       - name: Build release archive
         run: python scripts/build_release.py
       - name: Validate clean extraction
-        run: python scripts/validate_plugin.py --archive dist/scene-specifications-builder-blender-mcp-0.3.0.zip
+        run: python scripts/validate_plugin.py --archive "dist/scene-specifications-builder-blender-mcp-$(cat VERSION).zip"
