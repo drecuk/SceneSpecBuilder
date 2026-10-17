@@ -7,6 +7,60 @@ Scene Blueprint Builder is a skills-only OpenAI Agent Plugin for concept-art pla
 
 The blueprint is important human-readable documentation. The confirmed JSON is the source of truth for construction.
 
+---
+
+## OpenAI Codex Plugin
+
+- 📦 **[Download Scene Blueprint Builder Plugin v0.3.0](https://github.com/drecuk/SceneSpecBuilder/releases/download/v0.3.0/scene-specifications-builder-blender-mcp-0.3.0.zip)** ([release notes](https://github.com/drecuk/SceneSpecBuilder/releases/tag/v0.3.0))
+- Converts a textual story, environment, interior, building, or prop description into a coordinated four-panel visual blueprint.
+- Documents the perspective view, top orthographic plan, side elevation or cross-section, key objects, materials, scale, and spatial relationships for user review.
+- Waits for explicit approval of the visual blueprint before exporting matching, schema-validated Scene Specification JSON.
+- The approved JSON can be imported into the separate Scene Spec Builder Blender add-on or supplied to a verified Blender MCP workflow for 3D construction.
+- **Requirements:** ChatGPT desktop with Codex plugin support and access to image-generation and artifact capabilities. The `codex` command is needed only for the terminal-based repository marketplace setup below. No Node.js, Python runtime, local MCP server, or authentication is required for normal plugin use.
+- **SHA-256:** `304d63ad2124bfb87d88cfe5a880afc91c57f3517c0fa37bd6c132fe0532848a`
+
+### Install from this GitHub repository
+
+1. Make sure Codex is available in Windows PowerShell, macOS Terminal, or an Ubuntu terminal:
+
+   ```sh
+   codex --version
+   ```
+
+   If the command is unavailable, install or enable the Codex command-line tool from the ChatGPT desktop app before continuing. The plugin itself does not require Node.js.
+
+2. Add this GitHub repository as a Codex plugin marketplace:
+
+   ```sh
+   codex plugin marketplace add drecuk/SceneSpecBuilder
+   ```
+
+3. Restart the ChatGPT desktop app so the new marketplace is loaded.
+
+4. Open the **Plugins Directory**, select the **Scene Blueprint Tools** marketplace, open **Scene Blueprint Builder**, and select **Install**.
+
+5. Start a new conversation and try a scene request such as:
+
+   > Draw me a spatial layout for a modern jazz-themed cafe. I need space for a commercial espresso machine station, a cozy seating area with warm ambient lighting, and design elements that reflect a jazz club aesthetic.
+
+6. Review the generated four-panel blueprint and its object inventory. Request any corrections to the layout, scale, objects, materials, or visual style before approving it.
+
+7. When the blueprint is correct, explicitly confirm it, for example:
+
+   > Approved. Generate the matching Blender-ready scene JSON.
+
+8. Download the approved JSON and use it with the separate Scene Spec Builder Blender add-on or provide it to a verified Blender MCP workflow. The Codex plugin creates the blueprint and handoff specification; it does not create a `.blend` file on its own.
+
+To refresh the repository package after a new release:
+
+```sh
+codex plugin marketplace upgrade scene-blueprint-tools
+```
+
+Restart the ChatGPT desktop app after upgrading if the new version does not appear immediately.
+
+The ZIP link above is retained for release downloads, private upload, and package submission. Repository users should normally use the marketplace installation steps.
+
 ## What it does
 
 - Extracts the scene's objects, materials, spatial relationships, narrative anchors, and repeated elements from prose.
@@ -37,19 +91,9 @@ reports/
 
 The plugin package lives under `plugins/` so the repository also acts as a repo-scoped Codex marketplace. Release ZIPs contain the plugin files at the archive root, not the repository wrapper.
 
-## Install from this repository
+## Local development and direct ZIP installation
 
-From the repository root:
-
-```bash
-codex plugin marketplace add drecuk/SceneSpecBuilder
-```
-
-Restart the ChatGPT desktop app, open the Plugins Directory, choose **Scene Blueprint Tools**, and install **Scene Blueprint Builder**.
-
-For local development, `codex plugin marketplace add .` adds the current checkout instead. If the `codex` command is unavailable, use the ChatGPT desktop app's repository marketplace flow and select `https://github.com/drecuk/SceneSpecBuilder`. The plugin itself has no authentication requirement.
-
-## Direct ZIP installation
+For local development, run `codex plugin marketplace add .` from the repository root to add the current checkout instead of the published GitHub marketplace.
 
 Build the release archive:
 
@@ -61,7 +105,7 @@ Download the ready-made ZIP and checksum from the [v0.3.0 release](https://githu
 
 ## Upgrade and uninstall
 
-- Marketplace install: refresh or upgrade the marketplace, restart the app, and install the updated plugin version.
+- Marketplace install: run `codex plugin marketplace upgrade scene-blueprint-tools`, restart the app, and install the updated plugin version if prompted.
 - ZIP/private install: upload the newer version to the same plugin identity rather than creating a duplicate.
 - Uninstall: remove or disable the plugin from the Plugins Directory. Remove the marketplace separately only when no other plugins from that source are needed.
 
@@ -95,7 +139,7 @@ The validator checks the manifests, metadata limits, conversation starters, skil
 - Git-backed Codex marketplace: prepared and locally testable.
 - Agent/Codex plugin ZIP: prepared.
 - Existing private plugin update: supported by the release ZIP.
-- OpenAI public directory submission: package-prepared but not submission-complete until the publisher supplies and verifies all four public listing URLs, confirms a verified developer identity and category, chooses a license, and authorizes portal upload/submission.
+- OpenAI public directory submission: package-prepared but not submission-complete until the publisher supplies and verifies the remaining privacy-policy and terms-of-service URLs, confirms a verified developer identity and category, chooses a license, and authorizes portal upload/submission.
 
 See [Public submission checklist](docs/PUBLIC_SUBMISSION_CHECKLIST.md), [GitHub release guide](docs/GITHUB_RELEASE.md), and [architecture notes](docs/ARCHITECTURE.md).
 
