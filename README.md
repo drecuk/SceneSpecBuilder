@@ -21,35 +21,34 @@ The blueprint is important human-readable documentation. The confirmed JSON is t
 
 ### Install from this GitHub repository
 
-1. Make sure Codex is available in Windows PowerShell, macOS Terminal, or an Ubuntu terminal:
-
+1. Install or open the ChatGPT desktop app. It is required separately from Node.js and Codex CLI.
+2. Install [Node.js 20 or later](https://nodejs.org/) if it is not already available. Node.js supplies the runtime and the `npm` package manager used to install Codex CLI.
+3. Check that Node.js and npm are available in your console/terminal:
+   ```sh
+   node --version
+   npm --version
+   ```
+4. Install Codex CLI separately:
+   ```sh
+   npm install -g @openai/codex@latest
+   ```
+5. Check that Codex is available:
    ```sh
    codex --version
    ```
-
-   If the command is unavailable, install or enable the Codex command-line tool from the ChatGPT desktop app before continuing. The plugin itself does not require Node.js.
-
-2. Add this GitHub repository as a Codex plugin marketplace:
-
+6. Add this repository as a Codex plugin marketplace:
    ```sh
-   codex plugin marketplace add drecuk/SceneSpecBuilder
+   codex plugin marketplace add drecuk/VR8Df
    ```
+8. Restart the ChatGPT desktop app so the new marketplace is loaded.
+9. Open the **Plugins Directory**, select the **Scene Blueprint Tools** marketplace, open **Scene Blueprint Builder**, and select **Install**.
+10. Start a new conversation and try a scene request such as:
+    > Draw me a spatial layout for a modern jazz-themed cafe. I need space for a commercial espresso machine station, a cozy seating area with warm ambient lighting, and design elements that reflect a jazz club aesthetic.
 
-3. Restart the ChatGPT desktop app so the new marketplace is loaded.
-
-4. Open the **Plugins Directory**, select the **Scene Blueprint Tools** marketplace, open **Scene Blueprint Builder**, and select **Install**.
-
-5. Start a new conversation and try a scene request such as:
-
-   > Draw me a spatial layout for a modern jazz-themed cafe. I need space for a commercial espresso machine station, a cozy seating area with warm ambient lighting, and design elements that reflect a jazz club aesthetic.
-
-6. Review the generated four-panel blueprint and its object inventory. Request any corrections to the layout, scale, objects, materials, or visual style before approving it.
-
-7. When the blueprint is correct, explicitly confirm it, for example:
-
-   > Approved. Generate the matching Blender-ready scene JSON.
-
-8. Download the approved JSON and use it with the separate Scene Spec Builder Blender add-on or provide it to a verified Blender MCP workflow. The Codex plugin creates the blueprint and handoff specification; it does not create a `.blend` file on its own.
+12. Review the generated four-panel blueprint and its object inventory. Request any corrections to the layout, scale, objects, materials, or visual style before approving it.
+13. When the blueprint is correct, explicitly confirm it, for example:
+    > Approved. Generate the matching Blender-ready scene JSON.
+15. Download the approved JSON and use it with the separate Scene Spec Builder Blender add-on or provide it to a verified Blender MCP workflow. The Codex plugin creates the blueprint and handoff specification; it does not create a `.blend` file on its own.
 
 To refresh the repository package after a new release:
 
