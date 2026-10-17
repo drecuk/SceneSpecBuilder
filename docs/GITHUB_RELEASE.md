@@ -2,19 +2,19 @@
 
 Repository: https://github.com/drecuk/SceneSpecBuilder
 
-## Before the first public release
+## Release checklist
 
-1. Select a software license and add both the license file and manifest identifier when public reuse terms are decided.
+1. Confirm the version in `VERSION`, both manifests, the package README, and the changelog.
 2. Run the complete validation commands from the root README.
 3. Review the generated inventory, validation report, ZIP, and checksum.
-4. Commit the source, create tag `v0.3.0`, and make a GitHub Release.
+4. Commit the source, create the matching `v<version>` tag, and make a GitHub Release.
 5. Attach the versioned ZIP and `.sha256` checksum file.
 
-Recommended release title: `Scene Blueprint Builder 0.3.0`
+Recommended release title: `Scene Blueprint Builder 0.3.1`
 
 Recommended release summary:
 
-> Generates a four-panel scene blueprint for explicit visual approval, then exports matching schema-validated Blender-ready JSON. This is a skills-only plugin; Blender construction requires the separate Scene Spec Builder add-on or an existing verified Blender MCP workflow.
+> Adds Apache-2.0 licensing, published user-input and generated-output terms, packaged legal notices, and a separate project-branding policy. Scene Blueprint Builder remains a skills-only plugin that generates an approved four-panel blueprint and matching Blender-ready JSON.
 
 ## Git-backed marketplace
 

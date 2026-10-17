@@ -11,4 +11,10 @@ The plugin includes no MCP server and no authentication. Use the JSON with a sep
 
 Repository: https://github.com/drecuk/SceneSpecBuilder
 
-Version: `0.3.0`
+License: [Apache-2.0](LICENSE)
+
+Terms: [Scene Blueprint Builder Terms of Use](TERMS.md)
+
+Branding: [Scene Blueprint Builder Branding Policy](TRADEMARKS.md)
+
+Version: `0.3.1`

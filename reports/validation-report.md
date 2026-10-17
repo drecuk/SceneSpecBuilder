@@ -1,11 +1,11 @@
 # Validation report
 
 - Status: **PASS**
-- Version: `0.3.0`
-- Validated target: `dist/scene-specifications-builder-blender-mcp-0.3.0.zip`
+- Version: `0.3.1`
+- Validated target: `dist/scene-specifications-builder-blender-mcp-0.3.1.zip`
 - MCP server count: `0`
 - MCP tool count: `0`
-- SHA-256: `304d63ad2124bfb87d88cfe5a880afc91c57f3517c0fa37bd6c132fe0532848a`
+- SHA-256: `4e4615a2c813016d13930a138c4217e08a09dc23c1fa5fd31a7f10220d4c59ac`
 
 ## Errors
 
@@ -22,7 +22,10 @@
 - Archive has plugin.json at its root
 - Archive has no absolute or parent-traversal paths
 - Archive member is not a symlink: .codex-plugin/plugin.json
+- Archive member is not a symlink: LICENSE
 - Archive member is not a symlink: README.md
+- Archive member is not a symlink: TERMS.md
+- Archive member is not a symlink: TRADEMARKS.md
 - Archive member is not a symlink: assets/scene-blueprint-builder.png
 - Archive member is not a symlink: plugin.json
 - Archive member is not a symlink: skills/scene-specifications-builder/SKILL.md
@@ -38,9 +41,18 @@
 - Extracted: No symlink: .codex-plugin/plugin.json
 - Extracted: No prohibited path: .codex-plugin/plugin.json
 - Extracted: No app binding file: .codex-plugin/plugin.json
+- Extracted: No symlink: LICENSE
+- Extracted: No prohibited path: LICENSE
+- Extracted: No app binding file: LICENSE
 - Extracted: No symlink: README.md
 - Extracted: No prohibited path: README.md
 - Extracted: No app binding file: README.md
+- Extracted: No symlink: TERMS.md
+- Extracted: No prohibited path: TERMS.md
+- Extracted: No app binding file: TERMS.md
+- Extracted: No symlink: TRADEMARKS.md
+- Extracted: No prohibited path: TRADEMARKS.md
+- Extracted: No app binding file: TRADEMARKS.md
 - Extracted: No symlink: assets/scene-blueprint-builder.png
 - Extracted: No prohibited path: assets/scene-blueprint-builder.png
 - Extracted: No app binding file: assets/scene-blueprint-builder.png
@@ -77,11 +89,17 @@
 - Extracted: Required file exists: skills/scene-specifications-builder/agents/openai.yaml
 - Extracted: Required file exists: skills/scene-specifications-builder/references/scene_spec_v1.schema.json
 - Extracted: Required file exists: skills/scene-specifications-builder/references/example_scene_spec.json
+- Extracted: Required file exists: LICENSE
+- Extracted: Required file exists: TERMS.md
+- Extracted: Required file exists: TRADEMARKS.md
 - Extracted: Portable schema URL is exact
 - Extracted: Package name is a valid portable identifier
 - Extracted: Version is strict SemVer
 - Extracted: Compatibility name matches
 - Extracted: Compatibility version matches
+- Extracted: Portable manifest uses Apache-2.0
+- Extracted: Compatibility license matches
+- Extracted: Packaged LICENSE is the unmodified Apache-2.0 text
 - Extracted: Compatibility manifest omits portable schema
 - Extracted: Compatibility skill path is portable
 - Extracted: OpenAI extension is an object
@@ -98,6 +116,10 @@
 - Extracted: Compatibility developerName matches
 - Extracted: Category is nonblank
 - Extracted: Capabilities is an array
+- Extracted: Terms-of-service URL is the published repository document
+- Extracted: Compatibility terms-of-service URL matches
+- Extracted: Terms preserve user ownership of generated outputs
+- Extracted: Terms acknowledge applicable third-party service terms
 - Extracted: There are one to three starter prompts
 - Extracted: Starter prompt 1 is single-line, nonblank, at most 128 characters, and has no app mention
 - Extracted: Starter prompt 2 is single-line, nonblank, at most 128 characters, and has no app mention
@@ -130,6 +152,8 @@
 - Extracted: Example scene JSON validates against the bundled JSON Schema
 - Extracted: No machine-specific user path: .codex-plugin/plugin.json
 - Extracted: No machine-specific user path: README.md
+- Extracted: No machine-specific user path: TERMS.md
+- Extracted: No machine-specific user path: TRADEMARKS.md
 - Extracted: No machine-specific user path: plugin.json
 - Extracted: No machine-specific user path: skills/scene-specifications-builder/SKILL.md
 - Extracted: No machine-specific user path: skills/scene-specifications-builder/agents/openai.yaml
@@ -145,7 +169,10 @@
 ## Inventory
 
 - `.codex-plugin/plugin.json`
+- `LICENSE`
 - `README.md`
+- `TERMS.md`
+- `TRADEMARKS.md`
 - `assets/scene-blueprint-builder.png`
 - `plugin.json`
 - `skills/scene-specifications-builder/SKILL.md`

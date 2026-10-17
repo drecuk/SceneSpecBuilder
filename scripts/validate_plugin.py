@@ -26,6 +26,8 @@ PACKAGE_REL = Path("plugins/scene-specifications-builder-blender-mcp")
 PACKAGE_ROOT = REPO_ROOT / PACKAGE_REL
 MARKETPLACE_PATH = REPO_ROOT / ".agents/plugins/marketplace.json"
 SCHEMA_URL = "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json"
+APACHE_LICENSE_SHA256 = "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+TERMS_URL = "https://github.com/drecuk/SceneSpecBuilder/blob/main/TERMS.md"
 SEMVER = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$")
 NAME = re.compile(r"^[a-z0-9](?:[a-z0-9.-]{0,62}[a-z0-9])?$")
 FORBIDDEN_PARTS = {
@@ -118,10 +120,36 @@ def validate_package(
     agent_path = root / "skills/scene-specifications-builder/agents/openai.yaml"
     scene_schema_path = root / "skills/scene-specifications-builder/references/scene_spec_v1.schema.json"
     example_path = root / "skills/scene-specifications-builder/references/example_scene_spec.json"
+    license_path = root / "LICENSE"
+    terms_path = root / "TERMS.md"
+    trademarks_path = root / "TRADEMARKS.md"
 
-    for required in (manifest_path, compat_path, skill_path, agent_path, scene_schema_path, example_path):
+    for required in (
+        manifest_path,
+        compat_path,
+        skill_path,
+        agent_path,
+        scene_schema_path,
+        example_path,
+        license_path,
+        terms_path,
+        trademarks_path,
+    ):
         result.require(required.is_file(), f"Required file exists: {required.relative_to(root).as_posix()}")
-    if not all(path.is_file() for path in (manifest_path, compat_path, skill_path, agent_path, scene_schema_path, example_path)):
+    if not all(
+        path.is_file()
+        for path in (
+            manifest_path,
+            compat_path,
+            skill_path,
+            agent_path,
+            scene_schema_path,
+            example_path,
+            license_path,
+            terms_path,
+            trademarks_path,
+        )
+    ):
         return result
 
     try:
@@ -140,6 +168,12 @@ def validate_package(
         result.require(root.name == name, "Package directory matches manifest name")
     result.require(compat.get("name") == name, "Compatibility name matches")
     result.require(compat.get("version") == version, "Compatibility version matches")
+    result.require(manifest.get("license") == "Apache-2.0", "Portable manifest uses Apache-2.0")
+    result.require(compat.get("license") == manifest.get("license"), "Compatibility license matches")
+    result.require(
+        hashlib.sha256(license_path.read_bytes()).hexdigest() == APACHE_LICENSE_SHA256,
+        "Packaged LICENSE is the unmodified Apache-2.0 text",
+    )
     result.require("$schema" not in compat, "Compatibility manifest omits portable schema")
     result.require(compat.get("skills") == "./skills/", "Compatibility skill path is portable")
 
@@ -164,6 +198,14 @@ def validate_package(
 
     result.require(isinstance(interface.get("category"), str) and bool(interface["category"].strip()), "Category is nonblank")
     result.require(isinstance(interface.get("capabilities"), list), "Capabilities is an array")
+    result.require(interface.get("termsOfServiceURL") == TERMS_URL, "Terms-of-service URL is the published repository document")
+    result.require(compat_interface.get("termsOfServiceURL") == TERMS_URL, "Compatibility terms-of-service URL matches")
+    try:
+        terms_text = terms_path.read_text(encoding="utf-8")
+        result.require("does not claim ownership" in terms_text, "Terms preserve user ownership of generated outputs")
+        result.require("third-party service" in terms_text, "Terms acknowledge applicable third-party service terms")
+    except (OSError, UnicodeError) as exc:
+        result.errors.append(f"Terms validation failed: {exc}")
     prompts = interface.get("defaultPrompt")
     result.require(isinstance(prompts, list) and 1 <= len(prompts) <= 3, "There are one to three starter prompts")
     if isinstance(prompts, list):

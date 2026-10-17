@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "scene-specifications-builder-blender-mcp",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Creates a four-panel scene blueprint for visual approval, then exports matching Blender-ready JSON.",
   "author": {
     "name": "Eugene Ch’ng",
@@ -9,6 +9,7 @@
   },
   "homepage": "https://github.com/drecuk/SceneSpecBuilder",
   "repository": "https://github.com/drecuk/SceneSpecBuilder",
+  "license": "Apache-2.0",
   "keywords": [
     "blender",
     "blueprint",
@@ -34,12 +35,13 @@
         ],
         "websiteURL": "https://github.com/drecuk/SceneSpecBuilder",
         "supportURL": "https://github.com/drecuk/SceneSpecBuilder/issues",
+        "termsOfServiceURL": "https://github.com/drecuk/SceneSpecBuilder/blob/main/TERMS.md",
         "logo": "./assets/scene-blueprint-builder.png",
         "composerIcon": "./assets/scene-blueprint-builder.png",
         "brandColor": "#0B3B72"
       },
       "publication": {
-        "release_notes": "Adds a complete visual-approval workflow, exhaustive story-object inventory, a checked JSON handoff contract, three starter prompts, marketplace packaging, and a production icon."
+        "release_notes": "Adds Apache-2.0 licensing, packaged license notices, public terms covering user inputs and generated blueprint/JSON outputs, and a separate project-branding policy."
       }
     }
   }

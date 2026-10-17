@@ -1,7 +1,7 @@
 # Validation report
 
 - Status: **PASS**
-- Version: `0.3.0`
+- Version: `0.3.1`
 - Validated target: `plugins/scene-specifications-builder-blender-mcp`
 - MCP server count: `0`
 - MCP tool count: `0`
@@ -21,9 +21,18 @@
 - No symlink: .codex-plugin/plugin.json
 - No prohibited path: .codex-plugin/plugin.json
 - No app binding file: .codex-plugin/plugin.json
+- No symlink: LICENSE
+- No prohibited path: LICENSE
+- No app binding file: LICENSE
 - No symlink: README.md
 - No prohibited path: README.md
 - No app binding file: README.md
+- No symlink: TERMS.md
+- No prohibited path: TERMS.md
+- No app binding file: TERMS.md
+- No symlink: TRADEMARKS.md
+- No prohibited path: TRADEMARKS.md
+- No app binding file: TRADEMARKS.md
 - No symlink: assets/scene-blueprint-builder.png
 - No prohibited path: assets/scene-blueprint-builder.png
 - No app binding file: assets/scene-blueprint-builder.png
@@ -60,12 +69,18 @@
 - Required file exists: skills/scene-specifications-builder/agents/openai.yaml
 - Required file exists: skills/scene-specifications-builder/references/scene_spec_v1.schema.json
 - Required file exists: skills/scene-specifications-builder/references/example_scene_spec.json
+- Required file exists: LICENSE
+- Required file exists: TERMS.md
+- Required file exists: TRADEMARKS.md
 - Portable schema URL is exact
 - Package name is a valid portable identifier
 - Version is strict SemVer
 - Package directory matches manifest name
 - Compatibility name matches
 - Compatibility version matches
+- Portable manifest uses Apache-2.0
+- Compatibility license matches
+- Packaged LICENSE is the unmodified Apache-2.0 text
 - Compatibility manifest omits portable schema
 - Compatibility skill path is portable
 - OpenAI extension is an object
@@ -82,6 +97,10 @@
 - Compatibility developerName matches
 - Category is nonblank
 - Capabilities is an array
+- Terms-of-service URL is the published repository document
+- Compatibility terms-of-service URL matches
+- Terms preserve user ownership of generated outputs
+- Terms acknowledge applicable third-party service terms
 - There are one to three starter prompts
 - Starter prompt 1 is single-line, nonblank, at most 128 characters, and has no app mention
 - Starter prompt 2 is single-line, nonblank, at most 128 characters, and has no app mention
@@ -115,6 +134,8 @@
 - plugin.json validates against the live Agent Plugins schema
 - No machine-specific user path: .codex-plugin/plugin.json
 - No machine-specific user path: README.md
+- No machine-specific user path: TERMS.md
+- No machine-specific user path: TRADEMARKS.md
 - No machine-specific user path: plugin.json
 - No machine-specific user path: skills/scene-specifications-builder/SKILL.md
 - No machine-specific user path: skills/scene-specifications-builder/agents/openai.yaml
@@ -140,7 +161,10 @@
 ## Inventory
 
 - `.codex-plugin/plugin.json`
+- `LICENSE`
 - `README.md`
+- `TERMS.md`
+- `TRADEMARKS.md`
 - `assets/scene-blueprint-builder.png`
 - `plugin.json`
 - `skills/scene-specifications-builder/SKILL.md`

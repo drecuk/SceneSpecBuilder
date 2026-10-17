@@ -11,13 +11,13 @@ The blueprint is important human-readable documentation. The confirmed JSON is t
 
 ## OpenAI Codex Plugin
 
-- 📦 **[Download Scene Blueprint Builder Plugin v0.3.0](https://github.com/drecuk/SceneSpecBuilder/releases/download/v0.3.0/scene-specifications-builder-blender-mcp-0.3.0.zip)** ([release notes](https://github.com/drecuk/SceneSpecBuilder/releases/tag/v0.3.0))
+- 📦 **[Download Scene Blueprint Builder Plugin v0.3.1](https://github.com/drecuk/SceneSpecBuilder/releases/download/v0.3.1/scene-specifications-builder-blender-mcp-0.3.1.zip)** ([release notes](https://github.com/drecuk/SceneSpecBuilder/releases/tag/v0.3.1))
 - Converts a textual story, environment, interior, building, or prop description into a coordinated four-panel visual blueprint.
 - Documents the perspective view, top orthographic plan, side elevation or cross-section, key objects, materials, scale, and spatial relationships for user review.
 - Waits for explicit approval of the visual blueprint before exporting matching, schema-validated Scene Specification JSON.
 - The approved JSON can be imported into the separate Scene Spec Builder Blender add-on or supplied to a verified Blender MCP workflow for 3D construction.
 - **Requirements:** ChatGPT desktop with Codex plugin support and access to image-generation and artifact capabilities. The `codex` command is needed only for the terminal-based repository marketplace setup below. No Node.js, Python runtime, local MCP server, or authentication is required for normal plugin use.
-- **SHA-256:** `304d63ad2124bfb87d88cfe5a880afc91c57f3517c0fa37bd6c132fe0532848a`
+- **SHA-256:** `4e4615a2c813016d13930a138c4217e08a09dc23c1fa5fd31a7f10220d4c59ac`
 
 ### Install from this GitHub repository
 
@@ -101,7 +101,7 @@ Build the release archive:
 python3 scripts/build_release.py
 ```
 
-Download the ready-made ZIP and checksum from the [v0.3.0 release](https://github.com/drecuk/SceneSpecBuilder/releases/tag/v0.3.0), or use the locally built `dist/scene-specifications-builder-blender-mcp-0.3.0.zip`. The ZIP contains both portable `plugin.json` metadata and a `.codex-plugin/plugin.json` compatibility manifest.
+Download the ready-made ZIP and checksum from the [v0.3.1 release](https://github.com/drecuk/SceneSpecBuilder/releases/tag/v0.3.1), or use the locally built `dist/scene-specifications-builder-blender-mcp-0.3.1.zip`. The ZIP contains both portable `plugin.json` metadata and a `.codex-plugin/plugin.json` compatibility manifest.
 
 ## Upgrade and uninstall
 
@@ -128,7 +128,7 @@ python3 -m pip install -r requirements-dev.txt
 python3 -m pytest -q
 python3 scripts/validate_plugin.py
 python3 scripts/build_release.py
-python3 scripts/validate_plugin.py --archive dist/scene-specifications-builder-blender-mcp-0.3.0.zip
+python3 scripts/validate_plugin.py --archive dist/scene-specifications-builder-blender-mcp-0.3.1.zip
 ```
 
 The validator checks the manifests, metadata limits, conversation starters, skill frontmatter, referenced assets, icon, Scene Specification example, marketplace entry, prohibited files, symlinks, archive paths, version consistency, and optional live Agent Plugins schema validation.
@@ -139,10 +139,12 @@ The validator checks the manifests, metadata limits, conversation starters, skil
 - Git-backed Codex marketplace: prepared and locally testable.
 - Agent/Codex plugin ZIP: prepared.
 - Existing private plugin update: supported by the release ZIP.
-- OpenAI public directory submission: package-prepared but not submission-complete until the publisher supplies and verifies the remaining privacy-policy and terms-of-service URLs, confirms a verified developer identity and category, chooses a license, and authorizes portal upload/submission.
+- OpenAI public directory submission: package-prepared but not submission-complete until the publisher supplies and verifies a privacy-policy URL, confirms a verified developer identity, category, and country availability, and authorizes portal upload/submission.
 
 See [Public submission checklist](docs/PUBLIC_SUBMISSION_CHECKLIST.md), [GitHub release guide](docs/GITHUB_RELEASE.md), and [architecture notes](docs/ARCHITECTURE.md).
 
 ## License
 
-No public software license has been selected. Copyright remains with the author. Add a license file and manifest field only after the publisher explicitly chooses a license.
+Scene Blueprint Builder is licensed under the [Apache License 2.0](LICENSE). The installable ZIP includes the same license and declares the SPDX identifier `Apache-2.0` in both manifests.
+
+Users retain any rights they hold in their submitted material, and the publisher does not claim ownership of generated blueprints or scene JSON, subject to applicable law and third-party platform terms. See the [Terms of Use](TERMS.md). The project name, logo, and visual identity are covered separately by the [Branding Policy](TRADEMARKS.md).

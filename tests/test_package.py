@@ -31,6 +31,9 @@ def test_release_archive_and_clean_extraction_pass(tmp_path: Path) -> None:
     assert result.errors == []
     with zipfile.ZipFile(archive) as bundle:
         assert "plugin.json" in bundle.namelist()
+        assert "LICENSE" in bundle.namelist()
+        assert "TERMS.md" in bundle.namelist()
+        assert "TRADEMARKS.md" in bundle.namelist()
         assert all(not name.startswith("scene-specifications-builder-blender-mcp/") for name in bundle.namelist())
 
 
@@ -54,3 +57,18 @@ def test_plugin_is_skills_only() -> None:
     assert not (PACKAGE_ROOT / "mcp.json").exists()
     assert not (PACKAGE_ROOT / ".mcp.json").exists()
     assert not (PACKAGE_ROOT / ".app.json").exists()
+
+
+def test_license_terms_and_branding_policy_are_packaged() -> None:
+    manifest = json.loads((PACKAGE_ROOT / "plugin.json").read_text(encoding="utf-8"))
+    compatibility = json.loads((PACKAGE_ROOT / ".codex-plugin/plugin.json").read_text(encoding="utf-8"))
+    package_license = (PACKAGE_ROOT / "LICENSE").read_text(encoding="utf-8")
+    repository_license = (ROOT / "LICENSE").read_text(encoding="utf-8")
+    terms = (PACKAGE_ROOT / "TERMS.md").read_text(encoding="utf-8")
+
+    assert manifest["license"] == "Apache-2.0"
+    assert compatibility["license"] == "Apache-2.0"
+    assert package_license == repository_license
+    assert "Apache License" in package_license and "Version 2.0, January 2004" in package_license
+    assert "does not claim ownership" in terms
+    assert (PACKAGE_ROOT / "TRADEMARKS.md").is_file()

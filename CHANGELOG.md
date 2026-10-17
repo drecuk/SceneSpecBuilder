@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.1 — 2026-10-17
+
+- Licensed the repository and installable plugin package under Apache-2.0.
+- Published terms confirming that the publisher does not claim ownership of users' scene inputs or generated blueprint and JSON outputs, subject to applicable law and third-party platform terms.
+- Added a separate branding policy for the project name, logo, and visual identity.
+- Added manifest metadata and automated checks for the selected license and public terms URL.
+
 ## 0.3.0 — 2026-10-17
 
 - Recreated the plugin as a portable Agent Plugins package with a Codex compatibility manifest.
