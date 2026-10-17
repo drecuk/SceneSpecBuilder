@@ -1,6 +1,6 @@
 # Scene Blueprint Builder
 
-Scene Blueprint Builder is a OpenAI Agent Plugin for concept-art planning and Blender-MCP handoff. It turns a textual story, environment, interior, building, or object description into blueprints for AI agent 3D reconstructions:
+Scene Blueprint Builder is a OpenAI Agent Plugin for concept-art planning and Blender-MCP handoff. It turns a textual story, environment, interior, building, or object description into blueprints for agent-supported 3D reconstructions:
 
 1. a four-panel blueprint poster for visual review; and
 2. matching Blender-ready scene JSON after the user explicitly approves the design.
