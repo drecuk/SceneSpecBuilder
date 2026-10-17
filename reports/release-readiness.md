@@ -32,7 +32,8 @@ Date: 2026-10-17
 
 ## Distribution readiness
 
-- GitHub repository: `https://github.com/drecuk/SceneSpecBuilder` created; source push pending in this report snapshot.
+- GitHub repository: `https://github.com/drecuk/SceneSpecBuilder` published on `main`.
+- GitHub release: `https://github.com/drecuk/SceneSpecBuilder/releases/tag/v0.3.0` with ZIP and checksum assets.
 - Git-backed Codex marketplace: catalog and repository-relative plugin source are ready; not installed or published.
 - Agent/Codex ZIP: ready for private installation or upload to the existing plugin identity.
 - Existing private account plugin: inspected at version 0.2.1; not externally updated because this task did not explicitly authorize upload.

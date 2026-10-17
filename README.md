@@ -57,7 +57,7 @@ Build the release archive:
 python3 scripts/build_release.py
 ```
 
-Use `dist/scene-specifications-builder-blender-mcp-0.3.0.zip` wherever an Agent Plugin or Codex plugin ZIP is accepted. The ZIP contains both portable `plugin.json` metadata and a `.codex-plugin/plugin.json` compatibility manifest.
+Download the ready-made ZIP and checksum from the [v0.3.0 release](https://github.com/drecuk/SceneSpecBuilder/releases/tag/v0.3.0), or use the locally built `dist/scene-specifications-builder-blender-mcp-0.3.0.zip`. The ZIP contains both portable `plugin.json` metadata and a `.codex-plugin/plugin.json` compatibility manifest.
 
 ## Upgrade and uninstall
 
