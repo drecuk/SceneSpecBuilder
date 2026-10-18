@@ -71,6 +71,11 @@ The ZIP link above is retained for release downloads, private upload, and packag
 
 This plugin does not bundle or claim a Blender MCP server, does not create a `.blend` file by itself, and does not infer exact measurements from image pixels.
 
+## Recommended Model
+
+- ChatGPT sol5.6 (high) via Codex would be adequate to create scene blueprints and specs.
+- For Blender-MCP reconstruction in 3D using the blueprints and specs, ChatGPT's Codex Astra 6 (high) yield better results for realistic scenes, and sol5.6 for comic/stylised scenes.
+
 ## Repository layout
 
 ```text
